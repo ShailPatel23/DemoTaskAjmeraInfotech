@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		A58B666C2B59436A0094AAE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B666B2B59436A0094AAE8 /* AppDelegate.swift */; };
 		A58B666E2B59436A0094AAE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B666D2B59436A0094AAE8 /* SceneDelegate.swift */; };
-		A58B66702B59436A0094AAE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B666F2B59436A0094AAE8 /* ViewController.swift */; };
 		A58B66732B59436A0094AAE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58B66712B59436A0094AAE8 /* Main.storyboard */; };
 		A58B66752B59436B0094AAE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58B66742B59436B0094AAE8 /* Assets.xcassets */; };
 		A58B66782B59436B0094AAE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58B66762B59436B0094AAE8 /* LaunchScreen.storyboard */; };
+		A58B66802B5944770094AAE8 /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B667F2B5944770094AAE8 /* MediaVC.swift */; };
+		A58B66832B5945320094AAE8 /* MediaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B66822B5945320094AAE8 /* MediaVM.swift */; };
+		A58B668D2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B668C2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift */; };
+		A58B66912B594B740094AAE8 /* MediaCollVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B668F2B594B740094AAE8 /* MediaCollVCell.swift */; };
+		A58B66922B594B740094AAE8 /* MediaCollVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58B66902B594B740094AAE8 /* MediaCollVCell.xib */; };
+		A58B66952B595AB10094AAE8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B66942B595AB10094AAE8 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A58B66682B59436A0094AAE8 /* DemoTaskAjmeraInfotech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTaskAjmeraInfotech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58B666B2B59436A0094AAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A58B666D2B59436A0094AAE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A58B666F2B59436A0094AAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A58B66722B59436A0094AAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A58B66742B59436B0094AAE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58B66772B59436B0094AAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58B66792B59436B0094AAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A58B667F2B5944770094AAE8 /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
+		A58B66822B5945320094AAE8 /* MediaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVM.swift; sourceTree = "<group>"; };
+		A58B668C2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
+		A58B668F2B594B740094AAE8 /* MediaCollVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollVCell.swift; sourceTree = "<group>"; };
+		A58B66902B594B740094AAE8 /* MediaCollVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCollVCell.xib; sourceTree = "<group>"; };
+		A58B66942B595AB10094AAE8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,90 @@
 			children = (
 				A58B666B2B59436A0094AAE8 /* AppDelegate.swift */,
 				A58B666D2B59436A0094AAE8 /* SceneDelegate.swift */,
-				A58B666F2B59436A0094AAE8 /* ViewController.swift */,
-				A58B66712B59436A0094AAE8 /* Main.storyboard */,
+				A58B66882B594A9F0094AAE8 /* Storyboard */,
+				A58B66842B594A320094AAE8 /* Classes */,
+				A58B66892B594AB50094AAE8 /* Master */,
 				A58B66742B59436B0094AAE8 /* Assets.xcassets */,
-				A58B66762B59436B0094AAE8 /* LaunchScreen.storyboard */,
 				A58B66792B59436B0094AAE8 /* Info.plist */,
 			);
 			path = DemoTaskAjmeraInfotech;
+			sourceTree = "<group>";
+		};
+		A58B66842B594A320094AAE8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66852B594A400094AAE8 /* Controller */,
+				A58B66862B594A470094AAE8 /* ViewModel */,
+				A58B668E2B594B420094AAE8 /* CollectionCell */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A58B66852B594A400094AAE8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A58B667F2B5944770094AAE8 /* MediaVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A58B66862B594A470094AAE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66822B5945320094AAE8 /* MediaVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A58B66882B594A9F0094AAE8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66712B59436A0094AAE8 /* Main.storyboard */,
+				A58B66762B59436B0094AAE8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A58B66892B594AB50094AAE8 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66932B595A9C0094AAE8 /* Constant */,
+				A58B668A2B594AD60094AAE8 /* Extension */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		A58B668A2B594AD60094AAE8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A58B668B2B594ADE0094AAE8 /* UIKIt */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A58B668B2B594ADE0094AAE8 /* UIKIt */ = {
+			isa = PBXGroup;
+			children = (
+				A58B668C2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift */,
+			);
+			path = UIKIt;
+			sourceTree = "<group>";
+		};
+		A58B668E2B594B420094AAE8 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				A58B668F2B594B740094AAE8 /* MediaCollVCell.swift */,
+				A58B66902B594B740094AAE8 /* MediaCollVCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		A58B66932B595A9C0094AAE8 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66942B595AB10094AAE8 /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +215,7 @@
 				A58B66782B59436B0094AAE8 /* LaunchScreen.storyboard in Resources */,
 				A58B66752B59436B0094AAE8 /* Assets.xcassets in Resources */,
 				A58B66732B59436A0094AAE8 /* Main.storyboard in Resources */,
+				A58B66922B594B740094AAE8 /* MediaCollVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A58B66702B59436A0094AAE8 /* ViewController.swift in Sources */,
+				A58B66952B595AB10094AAE8 /* Constant.swift in Sources */,
 				A58B666C2B59436A0094AAE8 /* AppDelegate.swift in Sources */,
+				A58B66912B594B740094AAE8 /* MediaCollVCell.swift in Sources */,
+				A58B66802B5944770094AAE8 /* MediaVC.swift in Sources */,
+				A58B668D2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift in Sources */,
 				A58B666E2B59436A0094AAE8 /* SceneDelegate.swift in Sources */,
+				A58B66832B5945320094AAE8 /* MediaVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,11 +381,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoTaskAjmeraInfotech/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app wants to use your photo library to fetch media.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +393,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spp.DemoTaskAjmeraInfotech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,11 +411,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoTaskAjmeraInfotech/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app wants to use your photo library to fetch media.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +423,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spp.DemoTaskAjmeraInfotech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
