@@ -53,6 +53,7 @@ extension MediaVC {
             
         setupNavigation()
         mediaVM.populatePhotos(type: .Photo)
+        collVMedia.delegate = self
         collVMedia.register(MediaCollVCell.nib, forCellWithReuseIdentifier: MediaCollVCell.identifier)
         collVMedia.collectionViewLayout = createCompositionalLayout()
         mediaVM.updateData = { [weak self] in
@@ -129,6 +130,18 @@ extension MediaVC {
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
+    }
+}
+
+// MARK:- UICollectionView Delegate methods -
+extension MediaVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let mediaPreviewVC = MediaPreviewVC.instantiateFrom(appStoryboard: .Main) {
+            mediaPreviewVC.selectedIndex = indexPath.row
+            self.navigationController?.pushViewController(mediaPreviewVC, animated: true)
+        }
     }
 }
 

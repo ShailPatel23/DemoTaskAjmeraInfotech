@@ -18,6 +18,11 @@
 		A58B66912B594B740094AAE8 /* MediaCollVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B668F2B594B740094AAE8 /* MediaCollVCell.swift */; };
 		A58B66922B594B740094AAE8 /* MediaCollVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58B66902B594B740094AAE8 /* MediaCollVCell.xib */; };
 		A58B66952B595AB10094AAE8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B66942B595AB10094AAE8 /* Constant.swift */; };
+		A58B669C2B596DD40094AAE8 /* MediaPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B669B2B596DD40094AAE8 /* MediaPreviewVC.swift */; };
+		A58B669E2B5970250094AAE8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B669D2B5970250094AAE8 /* UIViewController+Extension.swift */; };
+		A58B66A02B5970430094AAE8 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B669F2B5970430094AAE8 /* AppStoryboard.swift */; };
+		A58B66A32B599BB20094AAE8 /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B66A22B599BB20094AAE8 /* MediaDetailView.swift */; };
+		A58B66A52B599BC80094AAE8 /* MediaDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58B66A42B599BC80094AAE8 /* MediaDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		A58B668F2B594B740094AAE8 /* MediaCollVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollVCell.swift; sourceTree = "<group>"; };
 		A58B66902B594B740094AAE8 /* MediaCollVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCollVCell.xib; sourceTree = "<group>"; };
 		A58B66942B595AB10094AAE8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A58B669B2B596DD40094AAE8 /* MediaPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewVC.swift; sourceTree = "<group>"; };
+		A58B669D2B5970250094AAE8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A58B669F2B5970430094AAE8 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		A58B66A22B599BB20094AAE8 /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
+		A58B66A42B599BC80094AAE8 /* MediaDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 				A58B66852B594A400094AAE8 /* Controller */,
 				A58B66862B594A470094AAE8 /* ViewModel */,
 				A58B668E2B594B420094AAE8 /* CollectionCell */,
+				A58B66A12B599B900094AAE8 /* CustomView */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				A58B667F2B5944770094AAE8 /* MediaVC.swift */,
+				A58B669B2B596DD40094AAE8 /* MediaPreviewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A58B668C2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift */,
+				A58B669D2B5970250094AAE8 /* UIViewController+Extension.swift */,
 			);
 			path = UIKIt;
 			sourceTree = "<group>";
@@ -150,8 +163,18 @@
 			isa = PBXGroup;
 			children = (
 				A58B66942B595AB10094AAE8 /* Constant.swift */,
+				A58B669F2B5970430094AAE8 /* AppStoryboard.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		A58B66A12B599B900094AAE8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				A58B66A22B599BB20094AAE8 /* MediaDetailView.swift */,
+				A58B66A42B599BC80094AAE8 /* MediaDetailView.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58B66782B59436B0094AAE8 /* LaunchScreen.storyboard in Resources */,
+				A58B66A52B599BC80094AAE8 /* MediaDetailView.xib in Resources */,
 				A58B66752B59436B0094AAE8 /* Assets.xcassets in Resources */,
 				A58B66732B59436A0094AAE8 /* Main.storyboard in Resources */,
 				A58B66922B594B740094AAE8 /* MediaCollVCell.xib in Resources */,
@@ -226,9 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58B66A02B5970430094AAE8 /* AppStoryboard.swift in Sources */,
+				A58B669E2B5970250094AAE8 /* UIViewController+Extension.swift in Sources */,
 				A58B66952B595AB10094AAE8 /* Constant.swift in Sources */,
 				A58B666C2B59436A0094AAE8 /* AppDelegate.swift in Sources */,
+				A58B669C2B596DD40094AAE8 /* MediaPreviewVC.swift in Sources */,
 				A58B66912B594B740094AAE8 /* MediaCollVCell.swift in Sources */,
+				A58B66A32B599BB20094AAE8 /* MediaDetailView.swift in Sources */,
 				A58B66802B5944770094AAE8 /* MediaVC.swift in Sources */,
 				A58B668D2B594AF70094AAE8 /* UICollectionReusableView+Extension.swift in Sources */,
 				A58B666E2B59436A0094AAE8 /* SceneDelegate.swift in Sources */,
