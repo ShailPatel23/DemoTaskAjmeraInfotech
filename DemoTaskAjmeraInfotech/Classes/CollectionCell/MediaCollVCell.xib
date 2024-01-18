@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="206" height="215"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VfN-d2-fiZ">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VfN-d2-fiZ">
                         <rect key="frame" x="0.0" y="0.0" width="206" height="215"/>
                     </imageView>
                 </subviews>
