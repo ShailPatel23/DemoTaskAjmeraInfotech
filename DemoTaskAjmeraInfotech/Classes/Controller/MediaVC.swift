@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-final class MediaVC: UIViewController {
+final class MediaVC: UIViewController, PHPhotoLibraryChangeObserver {
     
     // MARK:- IBOutlets -
     @IBOutlet private weak var collVMedia: UICollectionView!
@@ -32,6 +32,7 @@ final class MediaVC: UIViewController {
         
         return UICollectionViewCell()
     }
+    private let refreshControl = UIRefreshControl()
 
     // MARK:- Life cycle methods -
     override func viewDidLoad() {
@@ -44,6 +45,15 @@ final class MediaVC: UIViewController {
         collVMedia.collectionViewLayout = createCompositionalLayout()
         createSnapshot(items: mediaVM.arrMedia)
     }
+    
+    deinit {
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
+    }
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        
+        mediaVM.populatePhotos(type: mediaVM.selectedMediaType)
+    }
 }
 
 // MARK:- Initialization -
@@ -52,7 +62,10 @@ extension MediaVC {
     private func initialization() {
             
         setupNavigation()
+        PHPhotoLibrary.shared().register(self)
         mediaVM.populatePhotos(type: .Photo)
+        collVMedia.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(reloadMedia), for: .valueChanged)
         collVMedia.delegate = self
         collVMedia.register(MediaCollVCell.nib, forCellWithReuseIdentifier: MediaCollVCell.identifier)
         collVMedia.collectionViewLayout = createCompositionalLayout()
@@ -64,6 +77,7 @@ extension MediaVC {
                 self.lblPermission.isHidden = true
                 self.collVMedia.isHidden = false
                 self.createSnapshot(items: self.mediaVM.arrMedia)
+                self.refreshControl.endRefreshing()
             }
         }
         mediaVM.accessDenied = { [weak self] in
@@ -155,5 +169,9 @@ extension MediaVC {
         } else {
             mediaVM.populatePhotos(type: .Video)
         }
+    }
+    
+    @objc func reloadMedia() {
+        mediaVM.populatePhotos(type: mediaVM.selectedMediaType)
     }
 }
