@@ -19,14 +19,8 @@ enum AppStoryboard<T: UIViewController>: String {
     func viewController(viewControllerClass: T.Type) -> T? {
         
         let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
-        if #available(iOS 13.0, *) {
-            if let controller = instance.instantiateViewController(identifier: storyboardID) as? T {
-                return controller
-            }
-        } else {
-            if let controller = instance.instantiateViewController(withIdentifier: storyboardID) as? T {
-                return controller
-            }
+        if let controller = instance.instantiateViewController(identifier: storyboardID) as? T {
+            return controller
         }
         return nil
     }

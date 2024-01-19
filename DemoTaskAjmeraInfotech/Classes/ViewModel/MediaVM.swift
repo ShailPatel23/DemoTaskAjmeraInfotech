@@ -25,6 +25,29 @@ enum MediaType {
     }
 }
 
+enum ImageType {
+    
+    case Jpg
+    case Jpeg
+    case Heic
+    case all
+    
+    func getImageType() -> String {
+        
+        switch self {
+            
+        case .Jpg:
+            return "jpg"
+        case .Jpeg:
+            return "jpeg"
+        case .Heic:
+            return "HEIC"
+        case .all:
+            return ""
+        }
+    }
+}
+
 final class MediaVM {
     
     static let shared = MediaVM()
@@ -37,29 +60,48 @@ final class MediaVM {
 
 extension MediaVM {
     
-    func populatePhotos(type: MediaType) {
+    func populatePhotos(type: MediaType, imageType: ImageType = .all) {
         
+        // For requesting authorization of photo library
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             
             guard let self = self else { return }
             
             if status == .authorized {
                 
-                let assets = PHAsset.fetchAssets(with: type.getMediaType(), options: nil)
+                let options = PHFetchOptions()
+                options.predicate = NSPredicate(format: "mediaType = %d", type.getMediaType().rawValue)
+                
+                let fetchResult = PHAsset.fetchAssets(with: options)
                 
                 self.arrMedia.removeAll()
                 self.selectedMediaType = type
-                if assets.count == 0 {
+                if fetchResult.count == 0 {
                     self.updateData?()
                 }
-                assets.enumerateObjects { [weak self] object, _, _ in
+                fetchResult.enumerateObjects { (asset, _, _) in
+                    let resources = PHAssetResource.assetResources(for: asset)
                     
-                    guard let self = self else { return }
-                    
-                    self.arrMedia.append(object)
-                    self.updateData?()
+                    for resource in resources {
+                        // Get the file format of the asset
+                        if let fileExtension = resource.originalFilename.split(separator: ".").last {
+                            let format = String(fileExtension)
+
+                            // Check if the file format matches the desired format
+                            switch imageType {
+                            case .Jpg, .Jpeg, .Heic:
+                                if format == imageType.getImageType() {
+                                    self.arrMedia.append(asset)
+                                }
+                            case .all:
+                                self.arrMedia.append(asset)
+                            }
+                            self.updateData?()
+                        }
+                    }
                 }
             } else if status == .denied || status == .restricted {
+                
                 CGCDMainThread.async {
                     
                     self.accessDenied?()

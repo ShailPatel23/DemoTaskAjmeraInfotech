@@ -39,6 +39,7 @@ extension MediaDetailView {
 // MARK:- Helper methods -
 extension MediaDetailView {
  
+    // For converting bytes to KB/MB
     func converByteToHumanReadable(_ bytes:Int64) -> String {
          let formatter:ByteCountFormatter = ByteCountFormatter()
          formatter.countStyle = .binary
