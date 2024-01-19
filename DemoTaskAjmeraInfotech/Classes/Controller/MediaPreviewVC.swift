@@ -49,6 +49,7 @@ extension MediaPreviewVC {
         
         if mediaVM.selectedMediaType == .Video {
             
+            // For getting AVAsset from PHAsset
             PHCachingImageManager().requestAVAsset(forVideo: mediaVM.arrMedia[selectedIndex], options: nil) { video, _, _ in
                 
                 let asset = video as! AVURLAsset
@@ -57,6 +58,8 @@ extension MediaPreviewVC {
                 CGCDMainThread.async { [weak self] in
                         
                     guard let self = self else { return }
+                    
+                    // For playing the video
                     let avPlayerController = AVPlayerViewController()
                     avPlayerController.player = player
                     
@@ -121,6 +124,7 @@ extension MediaPreviewVC {
     
     @objc private func onDetailsClicked() {
         
+        // For opening and closing details view with animation
         if let mediaDetailView = Bundle.main.loadNibNamed("MediaDetailView", owner: nil, options: nil)?.last as? MediaDetailView {
             
             let visibleRect = CGRect(origin: collVMedia.contentOffset, size: collVMedia.bounds.size)

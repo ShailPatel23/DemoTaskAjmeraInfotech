@@ -13,6 +13,7 @@ final class MediaVC: UIViewController, PHPhotoLibraryChangeObserver {
     // MARK:- IBOutlets -
     @IBOutlet private weak var collVMedia: UICollectionView!
     @IBOutlet private weak var lblPermission: UILabel!
+    @IBOutlet private weak var btnFilter: UIButton!
     
     // MARK:- Variable -
     var mediaVM = MediaVM.shared
@@ -40,6 +41,7 @@ final class MediaVC: UIViewController, PHPhotoLibraryChangeObserver {
         initialization()
     }
     
+    // Checked whenever device orientation changed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         collVMedia.collectionViewLayout = createCompositionalLayout()
@@ -50,6 +52,7 @@ final class MediaVC: UIViewController, PHPhotoLibraryChangeObserver {
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
     
+    // Calls any changes happen in photo library
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         
         mediaVM.populatePhotos(type: mediaVM.selectedMediaType)
@@ -64,6 +67,7 @@ extension MediaVC {
         setupNavigation()
         PHPhotoLibrary.shared().register(self)
         mediaVM.populatePhotos(type: .Photo)
+        btnFilter.isHidden = (mediaVM.selectedMediaType == .Video)
         collVMedia.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(reloadMedia), for: .valueChanged)
         collVMedia.delegate = self
@@ -165,13 +169,47 @@ extension MediaVC {
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
+            
             mediaVM.populatePhotos(type: .Photo)
+            btnFilter.isHidden = false
         } else {
+            
             mediaVM.populatePhotos(type: .Video)
+            btnFilter.isHidden = true
         }
     }
     
     @objc func reloadMedia() {
         mediaVM.populatePhotos(type: mediaVM.selectedMediaType)
+    }
+    
+    @IBAction private func onFilterClicked(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Image Type Filter", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "jpg", style: .default, handler: { [weak self] action in
+            
+            guard let self = self else { return }
+            self.mediaVM.populatePhotos(type: self.mediaVM.selectedMediaType, imageType: .Jpg)
+        }))
+        alert.addAction(UIAlertAction(title: "jpeg", style: .default, handler: { [weak self] action in
+            
+            guard let self = self else { return }
+            self.mediaVM.populatePhotos(type: self.mediaVM.selectedMediaType, imageType: .Jpeg)
+        }))
+        alert.addAction(UIAlertAction(title: "HEIC", style: .default, handler: { [weak self] action in
+            
+            guard let self = self else { return }
+            self.mediaVM.populatePhotos(type: self.mediaVM.selectedMediaType, imageType: .Heic)
+        }))
+        alert.addAction(UIAlertAction(title: "all", style: .default, handler: { [weak self] action in
+           
+            guard let self = self else { return }
+            self.mediaVM.populatePhotos(type: self.mediaVM.selectedMediaType, imageType: .all)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+           
+        }))
+        
+        present(alert, animated: true)
     }
 }
